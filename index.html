@@ -220,7 +220,11 @@
       alert(`🎉 ชำระเงินสำเร็จ!\nยอดชำระเงินสุทธิ: ${finalPrice}`);
       clearCart();
     }
-
+if (!data || data.length === 0) {
+  counter.textContent = "0 รายการ";
+  container.innerHTML = `<div class="col-span-2 text-center py-8 text-slate-400">ไม่พบรายการเมนูในระบบ</div>`;
+  return;
+}
     // App Startup
     fetchMenuFromNetwork();
   </script>
